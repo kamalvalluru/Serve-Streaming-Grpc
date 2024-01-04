@@ -1,0 +1,18 @@
+syntax="proto3";
+
+option java_package="com.example.server";
+
+option java_multiple_files=true;
+
+service ServerStreaming
+{
+	rpc getMessage(Number) returns(stream Information){};
+}
+message Number
+{
+	int32 number=1;
+}
+message Information
+{
+	string message=1;
+}
